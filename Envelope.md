@@ -143,15 +143,70 @@ $$
 
 $$r_{e}\(u)=
 \begin{bmatrix}
-    x_{1}\\
+    x_{0}\\
     y_{1}+(t+dt)\left(y_{0}-y_{1}\right)
 \end{bmatrix} + u
-\big(\begin{bmatrix}
-    x_{0}+(t+dt)\left(x_{2}-x_{0}\right)\\
-    y_{0}
-\end{bmatrix} - 
 \begin{bmatrix}
-    x_{1}\\
-    y_{1}+(t+dt)\left(y_{0}-y_{1}\right)
-\end{bmatrix}\big)
+    (t+dt)\left(x_{2}-x_{0}\right)\\
+    (y_{0}-y_{1})-(t+dt)\left(y_{0}-y_{1}\right)
+\end{bmatrix}
 $$
+
+$$r_{e}\(u)=
+\begin{bmatrix}
+    x_{0}\\
+    y_{1}+(t+dt)\left(y_{0}-y_{1}\right)
+\end{bmatrix} + u
+\begin{bmatrix}
+    (t+dt)\left(x_{2}-x_{0}\right)\\
+    (1-t-dt)\left(y_{0}-y_{1}\right)
+\end{bmatrix}
+$$
+
+$$r_{e}\(u)=
+\begin{bmatrix}
+    x_{0}\\
+    y_{1}+(t+dt)\left(y_{0}-y_{1}\right)
+\end{bmatrix} +
+\begin{bmatrix}
+    u(t+dt)\left(x_{2}-x_{0}\right)\\
+    u(1-t-dt)\left(y_{0}-y_{1}\right)
+\end{bmatrix}
+$$
+
+$$r_{e}\(u)=
+\begin{bmatrix}
+    x_{0}\\
+    y_{1}+(t+dt)\left(y_{0}-y_{1}\right)
+\end{bmatrix} +
+\begin{bmatrix}
+    u(t+dt)\left(x_{2}-x_{0}\right)\\
+    (u-ut-udt)\left(y_{0}-y_{1}\right)
+\end{bmatrix}
+$$
+
+$$r_{e}\(u)=
+\begin{bmatrix}
+    x_{0}+u(t+dt)\left(x_{2}-x_{0}\right)\\
+    y_{1}+(t+dt)\left(y_{0}-y_{1}\right)+(u-ut-udt)\left(y_{0}-y_{1}\right)
+\end{bmatrix}
+$$
+
+$$r_{e}\(u)=
+\begin{bmatrix}
+    x_{0}+u(t+dt)\left(x_{2}-x_{0}\right)\\
+    y_{1}+(t+dt+u-ut-udt)\left(y_{0}-y_{1}\right)
+\end{bmatrix}
+$$
+
+Now let's solve the sytem of equations, starting with the x-position
+
+$$x_{0}+st\left(x_{2}-x_{0}\right)=x_{0}+u\left(t+dt\right)\left(x_{2}-x_{0}\right)$$
+
+$$(x_{0}+st\left(x_{2}-x_{0}\right)=x_{0}+u\left(t+dt\right)\left(x_{2}-x_{0}\right))-x_{0}$$
+
+$$st\left(x_{2}-x_{0}\right)=u\left(t+dt\right)\left(x_{2}-x_{0}\right)$$
+
+$$st=u\left(t+dt\right)$$
+
+$$s=u\left(1+\frac{dt}{t}\right)$$
